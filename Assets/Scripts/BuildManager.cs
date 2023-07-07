@@ -56,5 +56,18 @@ public class BuildManager : MonoBehaviour
             Destroy(currentObject);
             buildModeActive = false;
         }
+        
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+           Build(currentObject.GetComponent<Building>());
+        }
+    }
+
+    private void Build(Building b)
+    {
+        currentObject = null;
+        buildModeActive = false;
+        SystemEventManager.RaiseEvent(SystemEventManager.SystemEventType.BuildingPlaced, b);
+        b.Place();
     }
 }
