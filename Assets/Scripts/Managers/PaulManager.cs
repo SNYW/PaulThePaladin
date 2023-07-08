@@ -40,7 +40,7 @@ public class PaulManager : MonoBehaviour
        
     }
 
-    public IEnumerator ManageIdleWander()
+    private IEnumerator ManageIdleWander()
     {
         while (true)
         {

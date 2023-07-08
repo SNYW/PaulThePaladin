@@ -9,7 +9,8 @@ public class SystemEventManager
         BuildingPlaced,
         BuildModeEntered,
         UnitSeen,
-        QuestCreated
+        QuestCreated,
+        MenuUpdate
     }
 
     private static Dictionary<SystemEventType, Action<object>> _eventListeners;
@@ -17,6 +18,10 @@ public class SystemEventManager
     public static void Init()
     {
         _eventListeners = new Dictionary<SystemEventType, Action<object>>();
+        foreach (SystemEventType type in Enum.GetValues(typeof(SystemEventType)))
+        {
+            _eventListeners[type] = delegate {  };
+        }
     }
 
     public static void Subscribe(SystemEventType type, Action<object> action)

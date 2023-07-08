@@ -44,7 +44,7 @@ public class BuildManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            OnEnterBuildMode(debugData);
+           SystemEventManager.RaiseEvent(SystemEventManager.SystemEventType.BuildModeEntered, debugData);
         }
         if (!buildModeActive || currentObject == null) return;
 

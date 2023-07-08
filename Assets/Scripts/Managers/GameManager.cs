@@ -9,10 +9,4 @@ public class GameManager : MonoBehaviour
     {
         SystemEventManager.Init();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
